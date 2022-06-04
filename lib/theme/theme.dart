@@ -20,6 +20,9 @@ TextStyle priceTextStyle = GoogleFonts.poppins(color: priceColor);
 TextStyle descriptionTextStyle =
     GoogleFonts.poppins(color: descriptionTextColor);
 
+// margin 
+double margin30 = 30;
+
 // font weight
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;
