@@ -17,6 +17,7 @@ class _CurrentPageState extends State<CurrentPage> {
   int _currentPage = 0;
   Widget _customFLoating(Function() onTap) {
     return FloatingActionButton(
+      mini: true,
       backgroundColor: secondaryColor,
       onPressed: onTap,
       child: Image.asset(
@@ -42,10 +43,11 @@ class _CurrentPageState extends State<CurrentPage> {
     return ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       child: SizedBox(
-        height: 80,
+        height: 65,
         child: BottomAppBar(
           shape: const CircularNotchedRectangle(),
-          notchMargin: 10,
+          notchMargin: 5,
+          color: backgroundColor4,
           clipBehavior: Clip.antiAlias,
           child: BottomNavigationBar(
             currentIndex: _currentPage,
