@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:package/content/reusable_widget.dart';
+import 'package:package/pages/home/current_page.dart';
 import 'package:package/pages/sign-up_page.dart';
 import 'package:package/theme/theme.dart';
 
@@ -40,7 +41,7 @@ class SignIn extends StatelessWidget {
               const SizedBox(height: 30),
               buttonPrimary(
                   onTap: () {
-                    //TODO: untuk aksi login
+                    Navigator.pushNamed(context, CurrentPage.rootName);
                   },
                   textButton: 'Sign In'),
               const Spacer(),
