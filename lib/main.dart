@@ -10,11 +10,6 @@ import 'package:package/feature/detail_product/detail_product.dart';
 import 'package:package/feature/home/current_page.dart';
 import 'package:package/feature/profile/edt_profile.dart';
 import 'package:package/feature/splash_screen_page.dart';
-import 'package:package/providers/login_provider.dart';
-import 'package:package/providers/logout_provider.dart';
-import 'package:package/providers/register_provider.dart';
-import 'package:package/providers/user_provider.dart';
-import 'package:provider/provider.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,36 +21,24 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<RegisterProvider>(
-            create: (context) => RegisterProvider()),
-        ChangeNotifierProvider<LoginProvider>(
-            create: (context) => LoginProvider()),
-        ChangeNotifierProvider<LogoutProvider>(
-            create: (context) => LogoutProvider()),
-        ChangeNotifierProvider<UserProvider>(
-            create: (context) => UserProvider()),
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-          splashColor: Colors.transparent,
-          colorScheme: schemeColor,
-        ),
-        debugShowCheckedModeBanner: false,
-        routes: {
-          SplashScreen.rootName: (context) => const SplashScreen(),
-          SignIn.rootName: (context) => const SignIn(),
-          SignUpPage.rootName: (context) => SignUpPage(),
-          CurrentPage.rootName: (context) => const CurrentPage(),
-          EdtProfile.rootName: (context) => EdtProfile(),
-          DetailChatPage.rootName: (context) => const DetailChatPage(),
-          DetailsProductPage.rootName: (context) => const DetailsProductPage(),
-          CartPage.rootName: (context) => const CartPage(),
-          DetailCheckOutPage.rootName: (context) => const DetailCheckOutPage(),
-          CheckOutSuccessPage.rootName: (context) => const CheckOutSuccessPage()
-        },
+    return MaterialApp(
+      theme: ThemeData(
+        splashColor: Colors.transparent,
+        colorScheme: schemeColor,
       ),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        SplashScreen.rootName: (context) => const SplashScreen(),
+        SignIn.rootName: (context) => const SignIn(),
+        SignUpPage.rootName: (context) => SignUpPage(),
+        CurrentPage.rootName: (context) => const CurrentPage(),
+        EdtProfile.rootName: (context) => EdtProfile(),
+        DetailChatPage.rootName: (context) => const DetailChatPage(),
+        DetailsProductPage.rootName: (context) => const DetailsProductPage(),
+        CartPage.rootName: (context) => const CartPage(),
+        DetailCheckOutPage.rootName: (context) => const DetailCheckOutPage(),
+        CheckOutSuccessPage.rootName: (context) => const CheckOutSuccessPage()
+      },
     );
   }
 }
